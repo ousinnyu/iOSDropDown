@@ -178,9 +178,39 @@ open class DropDown : UITextField{
         }
         let gesture2 =  UITapGestureRecognizer(target: self, action:  #selector(touchAction))
         self.backgroundView.addGestureRecognizer(gesture2)
-        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(touchAction))
-        self.backgroundView.addGestureRecognizer(swipe)
+        //上スワイプ用のインスタンスを生成する
+        let upSwipe = UISwipeGestureRecognizer(
+            target: self,
+            action: #selector(touchAction)
+        )
+        upSwipe.direction = .up
+        self.backgroundView.addGestureRecognizer(upSwipe)
+
+        //右スワイプ用のインスタンスを生成する
+        let rightSwipe = UISwipeGestureRecognizer(
+            target: self,
+            action: #selector(touchAction)
+        )
+        rightSwipe.direction = .right
+        self.backgroundView.addGestureRecognizer(rightSwipe)
+
+        //下スワイプ用のインスタンスを生成する
+        let downSwipe = UISwipeGestureRecognizer(
+            target: self,
+            action: #selector(touchAction)
+        )
+        downSwipe.direction = .down
+        self.backgroundView.addGestureRecognizer(downSwipe)
+
+        //左スワイプ用のインスタンスを生成する
+        let leftSwipe = UISwipeGestureRecognizer(
+            target: self,
+            action: #selector(touchAction)
+        )
+        leftSwipe.direction = .left
+        self.backgroundView.addGestureRecognizer(leftSwipe)
     }
+    
     func getConvertedPoint(_ targetView: UIView, baseView: UIView?)->CGPoint{
         var pnt = targetView.frame.origin
         if nil == targetView.superview{
