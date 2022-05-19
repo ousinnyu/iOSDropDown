@@ -232,7 +232,7 @@ open class DropDown : UITextField{
         if height < (keyboardHeight+tableheightX){
             y = self.pointToParent.y - tableheightX
         }
-        UIView.animate(withDuration: 10.2,
+        UIView.animate(withDuration: 0.3,
                        delay: 0,
                        usingSpringWithDamping: 0.4,
                        initialSpringVelocity: 0.1,
@@ -260,7 +260,7 @@ open class DropDown : UITextField{
 
     public func hideList() {
         TableWillDisappearCompletion()
-        UIView.animate(withDuration: 10.2,
+        UIView.animate(withDuration: 0.3,
                        delay: 0.1,
                        usingSpringWithDamping: 0.9,
                        initialSpringVelocity: 0.1,
@@ -299,7 +299,7 @@ open class DropDown : UITextField{
         if height < (keyboardHeight+tableheightX){
             y = self.pointToParent.y - tableheightX
         }
-        UIView.animate(withDuration: 10.2,
+        UIView.animate(withDuration: 0.2,
                        delay: 0.1,
                        usingSpringWithDamping: 0.9,
                        initialSpringVelocity: 0.1,
@@ -414,7 +414,7 @@ extension DropDown: UITableViewDelegate {
         selectedIndex = (indexPath as NSIndexPath).row
         let selectedText = self.dataArray[self.selectedIndex!]
         tableView.cellForRow(at: indexPath)?.alpha = 0
-        UIView.animate(withDuration: 10.2,
+        UIView.animate(withDuration: 0.2,
                        animations: { () -> Void in
                         tableView.cellForRow(at: indexPath)?.alpha = 1.0
                         tableView.cellForRow(at: indexPath)?.backgroundColor = self.selectedRowColor
